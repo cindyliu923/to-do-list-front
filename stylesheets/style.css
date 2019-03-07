@@ -1,0 +1,316 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Roboto-Medium;
+  font-size: 24px;
+  background: #E1E1E1;
+  color: #000000;
+}
+
+a {
+  font-family: Roboto-Regular;
+  color: #00408B;
+}
+
+p {
+  font-size: 16px;
+}
+
+textarea {
+  border-width: 0px;
+}
+
+.form-row {
+  margin-left: 20px;
+}
+
+.form-control {
+  color: #C8C8C8;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.navbar-nav {
+  margin-top: 13.5px;
+}
+
+.navbar {
+  padding: 0rem 1rem;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: transparent;
+  border-bottom: 5px #00408B solid;
+  padding-bottom: 13.5px;
+}
+
+.input-group {
+  width: auto;
+}
+
+.card {
+  min-width: 620px;
+  background: #F2F2F2;
+  box-shadow: 0 4px 4px 0 #C8C8C8;
+  border-radius: 5px;
+  margin: 2vw 28vw;
+}
+
+.card-header {
+  background-color: #F2F2F2;
+  border-bottom: 2px solid #C8C8C8;
+  padding: 1.2rem 0.2rem;
+  height: 76px;
+}
+
+.card-body {
+  font-size: 20px;
+  padding-left: 9%;
+  padding-right: 12%;
+}
+
+.card-footer {
+  padding: 0rem 0.3rem;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: 0px;
+}
+
+.to-do-header {
+  padding: 0px;
+  font-size: 24px;
+  color: #000000;
+  background-color: transparent;
+  border: 0px;
+  flex: 1 1 auto;
+}
+
+.to-do-header::-webkit-input-placeholder {
+  font-family: Roboto-Medium;
+  font-size: 24px;
+  color: #000000;
+}
+
+.to-do::-webkit-input-placeholder, .form-row::-webkit-input-placeholder {
+  color: #C8C8C8;
+}
+
+.far, .fas {
+  margin: inherit;
+  padding: inherit;
+  margin-top: 5px;
+}
+
+.fa-star,.fa-pen {
+  cursor: pointer;
+}
+
+.fas.fa-star {
+  color: #F5A623;
+}
+
+.open-pen {
+  color: #4A90E2;
+}
+
+
+.footer-btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+  padding: 0.88rem 1rem;
+  border-radius: 0;
+  font-size: 24px;
+}
+
+.btn-outline-danger {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: #D0021B;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active, .btn-outline-danger.active, .open>.dropdown-toggle.btn-outline-danger {
+  background-color: #FDFDFD;
+  border-color: #FDFDFD;
+  color: #D0021B;
+}
+
+.btn-primary {
+  background: #4A90E2;
+  border-color: #4A90E2;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  background-color: #3982D7;
+  border-color: #3982D7;
+}
+
+.to-do {
+  background: #FFFFFF;
+  border: 2px solid #C8C8C8;
+  border-radius: 5px;
+  width: 620px;
+  height: 65px;
+  margin: 2vw 28vw;
+}
+
+.todo-item {
+  width: 620px;
+  height: 102px;
+  background: #F2F2F2;
+  padding-top: 10px;
+  margin-bottom: 8px;
+}
+
+.todo-item:hover {
+  -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+
+}
+
+.todo-item:hover > span {
+  border-right: 5px dotted #D8D8D8;
+  cursor: pointer;
+
+}
+
+span {
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  border-right: 5px dotted transparent;
+  margin: 0px 5px;
+}
+
+.todo-fa{
+  color: #757575;
+  font-size: 18px;
+  margin-left: 30px;
+  margin-top: -32px;
+  margin-right: -18px;
+}
+
+/* The customcheck */
+.customcheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.customcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customcheck input:checked ~ .checkmark {
+  background-color: #4A90E2;
+  border-radius: 2px;
+}
+
+.customcheck input:checked ~ .label {
+  text-decoration: line-through;
+  color: #9B9B9B;
+}
+
+.label {
+  margin-left: 10px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.customcheck input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customcheck .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.doing-quantity {
+  font-family: Roboto-Italic;
+  font-size: 24px;
+  color: #C8C8C8;
+  margin-left: 25px;
+}
+
+.upload_cover {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  cursor: pointer;
+  background: #C8C8C8;
+  border-radius: 2px;
+  margin-left: 10px;
+}
+
+.upload_cover:hover {
+  background: #4A90E2;
+}
+
+#todoItemFile {
+  display: none;
+}
+
+.upload_icon {
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: white;
+  margin-left: 4px;
+}
