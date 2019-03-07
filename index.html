@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="javascripts/index.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>to-do-list-front</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg" style="background-color: #4A90E2;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-my-tasks-tab" data-toggle="pill" href="#pills-my-tasks" role="tab" aria-controls="pills-my-tasks" aria-selected="true">My Tasks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-in-progress-tab" data-toggle="pill" href="#pills-in-progress" role="tab" aria-controls="pills-in-progress" aria-selected="false">In Progress</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed" aria-selected="false">Completed</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="d-flex justify-content-center">
+          <div class="input-group">
+            <input id="add" onclick="clickTodo()" type="text" class="to-do" placeholder=" ＋ Add Task" aria-label="Recipient's username" aria-describedby="basic-addon2">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <div id="add-todo" class="card mb-3" style="display: none;">
+            <form id="todoForm">
+              <div class="card-header">
+                <div class="input-group col-md-12">
+                  <label class="customcheck">
+                    <input name="done" id="done" type="checkbox" aria-label="done">
+                    <span class="checkmark"></span>
+                  </label>
+                  <input type="hidden" id="star" name="star" aria-label="star">
+                  <input name="title" type="text" class="to-do-header" aria-label="title" placeholder="Type Something Here…">
+                <i class="far fa-star open-star"></i>
+                <i class="fas fa-pen open-pen"></i>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="inputDatetime" class="col-form-label"><i class="far fa-calendar-alt"></i> Deadline</label>
+                  <div class="form-row">
+                    <div class="col-5">
+                      <input name="date" type="date" class="form-control" id="inputDatetime">
+                    </div>
+                    <div class="col-5">
+                      <input name="time" type="time" class="form-control" id="inputDatetime">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <i class="far fa-file"></i> File
+                  <br/>
+                  <div class="form-row">
+                    <p class="file-name"></p>
+                    <label class="upload_cover">
+                      <input name="file" type="file" class="form-control-file" id="todoItemFile">
+                      <span class="upload_icon">＋</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"><i class="far fa-comment-dots"></i> Comment</label>
+                  <textarea name="comment" class="col-12 form-row" id="exampleFormControlTextarea1" placeholder="Type your memo here…"></textarea>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="footer-btn">
+                  <button onclick="clickTodo()" type="button" class="btn btn-outline-danger btn-lg col-6">Ｘ Cancel</button>
+                  <button type="submit" class="btn btn-primary btn-lg col-6" id="add-button">＋ Add Task</button>
+                  <button type="submit" class="btn btn-primary btn-lg col-6" id="save-button" style="display: none;">＋ Save</button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
+          <div class="todos tab-pane fade show active" id="pills-my-tasks" role="tabpanel" aria-labelledby="pills-my-tasks-tab">
+          </div>
+
+          <div class="doing tab-pane fade" id="pills-in-progress" role="tabpanel" aria-labelledby="pills-in-progress-tab"></div>
+          <div class="done tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+    </footer>
+  </body>
+</html>
