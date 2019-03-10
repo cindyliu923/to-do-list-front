@@ -9,6 +9,8 @@ function clickTodo() {
   field.elements["star"].value = "";
   $("#done").removeAttr('checked');
   $('.file-name').empty();
+  $('input[type="date"]').css('color', '#C8C8C8');
+  $('input[type="time"]').css('color', '#C8C8C8');
 
   if (addtodo.style.display === "none") {
     addtodo.style.display = "block";
@@ -52,6 +54,15 @@ function editItem(number) {
       field.elements[key].value = value;
     } else if (key === "done" && value === "on") {
       checkbox.setAttribute("checked", "checked");
+      field.elements[key].value = value;
+    } else if (key === "date" || key === "time") {
+      if (value !== ""){
+        $('input[type="date"]').css('color', 'black');
+        $('input[type="time"]').css('color', 'black');
+      } else {
+        $('input[type="date"]').css('color', '#C8C8C8');
+        $('input[type="time"]').css('color', '#C8C8C8');
+      }
       field.elements[key].value = value;
     } else {
       field.elements[key].value = value;
